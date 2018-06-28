@@ -17,4 +17,6 @@ eureka:
     # 服务注册地址
     service-url:
           defaultZone: http://10.0.17.164:8761/eureka/,http://10.0.23.143:8761/eureka/
+  server:
+    peer-eureka-nodes-update-interval-ms: 1000
 
