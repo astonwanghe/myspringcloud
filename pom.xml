@@ -7,8 +7,12 @@
     <groupId>com.melot.kk</groupId>
     <artifactId>myspringcloud</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>eureka-server</module>
+        <module>eureka-client-provider</module>
+        <module>eureka-client-consumer-ribbon</module>
+        <module>eureka-client-consumer-feign</module>
     </modules>
 </project>
