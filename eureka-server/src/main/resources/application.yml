@@ -10,13 +10,21 @@ eureka:
     # 服务IP地址
     ip-address: 10.0.17.164
     prefer-ip-address: true
+
+  #服务端配置
+  server:
+    # 关闭自我保护机制, 确保将不可用实例正确剔除
+    enable-self-preservation: false
+
+  #客户端配置
   client:
     # 向注册中心注册自己
     register-with-eureka: true
     fetch-registry: true
     # 服务注册地址
     service-url:
-          defaultZone: http://10.0.17.164:8761/eureka/,http://10.0.23.143:8761/eureka/
-  server:
-    peer-eureka-nodes-update-interval-ms: 1000
+          defaultZone: http://10.0.17.164:8761/eureka/
+
+
+
 
