@@ -8,23 +8,30 @@ server:
 eureka:
   instance:
     # 服务IP地址
-    ip-address: 10.0.17.164
+    ip-address: 192.168.0.100
     prefer-ip-address: true
+    # 心跳间隔
+    lease-renewal-interval-in-seconds: 5
+    # 没有心跳的淘汰时间
+    lease-expiration-duration-in-seconds: 10
 
   #服务端配置
   server:
-    # 关闭自我保护机制, 确保将不可用实例正确剔除
-    enable-self-preservation: false
+      # 关闭自我保护机制，确保将不可用实例正确剔除
+      enable-self-preservation: false
+      # 主动失效检测间隔
+      eviction-interval-timer-in-ms: 5000
+      # 禁用readOnlyCacheMap
+      use-read-only-response-cache: false
+      ## 心跳阈值计算周期，如果开启自我保护模式，可以改下这个配置
+      ## renewal-threshold-update-interval-ms: 120000
 
-  #客户端配置
   client:
     # 向注册中心注册自己
     register-with-eureka: true
     fetch-registry: true
     # 服务注册地址
     service-url:
-          defaultZone: http://10.0.17.164:8761/eureka/
-
-
+          defaultZone: http://192.168.0.100:8761/eureka/
 
 

@@ -6,7 +6,18 @@ server:
   port: 8762
 
 eureka:
+  instance:
+    # 心跳间隔
+    lease-renewal-interval-in-seconds: 5
+    # 没有心跳的淘汰时间
+    lease-expiration-duration-in-seconds: 10
+
   client:
+    # 定时刷新本地缓存时间
+    registry-fetch-interval-seconds: 5
     service-url:
-      defaultZone: http://10.0.17.164:8761/eureka/,http://10.0.23.143:8761/eureka
+      defaultZone: http://192.168.0.100:8761/eureka
+
+
+
 
