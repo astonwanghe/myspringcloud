@@ -8,8 +8,8 @@ server:
 eureka:
   instance:
     # 服务IP地址
-    ip-address: 192.168.0.100
-    prefer-ip-address: true
+    ip-address: 172.17.5.186
+    prefer-ip-address: false
     # 心跳间隔
     lease-renewal-interval-in-seconds: 5
     # 没有心跳的淘汰时间
@@ -32,6 +32,6 @@ eureka:
     fetch-registry: true
     # 服务注册地址
     service-url:
-          defaultZone: http://192.168.0.100:8761/eureka/
+          defaultZone: http://localhost:8761/eureka/
 
 

@@ -11,7 +11,9 @@ import java.util.Random;
 public class NumberController {
 
     @GetMapping("/getRandomNumber")
-    public int getRandomNumber() {
+    public int getRandomNumber() throws InterruptedException {
+        // 随机睡眠0-3000毫秒, 当>2000毫秒时可以触发断路器
+        Thread.sleep(new Random().nextInt(3000));
         return new Random().nextInt(100);
     }
 }
